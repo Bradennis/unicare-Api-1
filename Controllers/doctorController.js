@@ -45,7 +45,7 @@ const getDoctorAppointments = async (req, res) => {
 
 const getApprovedDoctorAppointments = async (req, res) => {
   try {
-    const doctorId = req.body.userId;
+    const doctorId = req.user.id;
 
     const appointments = await Appointment.find({
       doctorId: doctorId,
